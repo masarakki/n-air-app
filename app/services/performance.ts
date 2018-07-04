@@ -39,7 +39,7 @@ export class PerformanceService extends StatefulService<IPerformanceState> {
   }
 
   init() {
-    electron.ipcRenderer.on('notifyPerformanceStatistics', (stats: IPerformanceState) => {
+    electron.ipcRenderer.on('notifyPerformanceStatistics', (e: any, stats: IPerformanceState) => {
       this.processPerformanceStats(stats);
     });
 
@@ -53,7 +53,7 @@ export class PerformanceService extends StatefulService<IPerformanceState> {
       this.droppedFramesDetected.next(stats.percentageDroppedFrames / 100);
     }
 
-    stats.CPU = electron.remote.app.getAppMetrics().map(proc => {
+    stats.CPU += electron.remote.app.getAppMetrics().map(proc => {
       return proc.cpu.percentCPUUsage;
     }).reduce((sum, usage) => sum + usage);
 
