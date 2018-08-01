@@ -271,11 +271,11 @@ function startApp() {
     // devtoolsInstaller.default(devtoolsInstaller.VUEJS_DEVTOOLS);
 
     // setTimeout(() => {
-      openDevTools();
+      // openDevTools();
     // }, 10 * 1000);
 
   }
-  
+  openDevTools();
   getObs().IPC.ConnectOrHost("slobs" + uuid());
   // Initialize various OBS services
   getObs().SetWorkingDirectory(
