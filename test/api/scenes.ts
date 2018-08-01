@@ -17,7 +17,6 @@ test('SceneItem.addFile()', async t => {
   const scene = scenesService.activeScene;
 
   scene.clear();
-  await sleep(9999999);
   scene.addFile(dataDir);
  
   t.true(sceneBuilder.isEqualTo(`
