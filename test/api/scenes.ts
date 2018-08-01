@@ -16,24 +16,10 @@ test('SceneItem.addFile()', async t => {
   const scenesService = client.getResource<IScenesServiceApi>('ScenesService');
   const scene = scenesService.activeScene;
 
-  await scene.clear();
-  await scene.addFile(dataDir);
-
-  if(!sceneBuilder.isEqualTo(`
-  sources-files
-    html
-      hello.html: browser_source
-    images
-      moon.png: image_source
-      sun.png: image_source
-    media
-      alertbox.mp4: ffmpeg_source
-      chatbox.mp4: ffmpeg_source
-    text
-      hello.txt: text_gdiplus
-`)) {
+  scene.clear();
+  scene.addFile(dataDir);
+ 
   await sleep(9999999);
-}
 
   t.true(sceneBuilder.isEqualTo(`
     sources-files
