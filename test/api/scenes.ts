@@ -16,8 +16,8 @@ test('SceneItem.addFile()', async t => {
   const scenesService = client.getResource<IScenesServiceApi>('ScenesService');
   const scene = scenesService.activeScene;
 
-  scene.clear();
-  scene.addFile(dataDir);
+  await scene.clear();
+  await scene.addFile(dataDir);
 
   if(!sceneBuilder.isEqualTo(`
   sources-files
