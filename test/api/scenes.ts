@@ -17,10 +17,9 @@ test('SceneItem.addFile()', async t => {
   const scene = scenesService.activeScene;
 
   scene.clear();
+  await sleep(9999999);
   scene.addFile(dataDir);
  
-  await sleep(9999999);
-
   t.true(sceneBuilder.isEqualTo(`
     sources-files
       html
@@ -34,6 +33,4 @@ test('SceneItem.addFile()', async t => {
       text
         hello.txt: text_gdiplus
   `));
-
-
 });
