@@ -6741,9 +6741,9 @@ object.pick@^1.3.0:
   dependencies:
     isobject "^3.0.1"
 
-"obs-studio-node@https://ci.appveyor.com/api/buildjobs/d6m29po0m8fhkohs/artifacts/iojs-v2.0.4-unsigned.tar.gz":
+"obs-studio-node@https://ci.appveyor.com/api/buildjobs/4x0dvnmk9jx6743a/artifacts/iojs-v2.0.4-unsigned.tar.gz":
   version "0.0.1"
-  resolved "https://ci.appveyor.com/api/buildjobs/d6m29po0m8fhkohs/artifacts/iojs-v2.0.4-unsigned.tar.gz#b4305b3c7ace2103332d10eea3af642f9885685c"
+  resolved "https://ci.appveyor.com/api/buildjobs/4x0dvnmk9jx6743a/artifacts/iojs-v2.0.4-unsigned.tar.gz#92c1723d0be5c64b66c4406da3f0a2fe59922c80"
 
 observable-to-promise@^0.5.0:
   version "0.5.0"
