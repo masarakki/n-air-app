@@ -191,7 +191,6 @@ export class Scene implements ISceneApi {
     if (!source) return null;
     const item = this.addSource(source.sourceId);
     if (folderId) item.setParent(folderId);
-    debugger;
     return item;
   }
 
