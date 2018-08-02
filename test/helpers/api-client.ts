@@ -8,7 +8,7 @@ const { spawnSync } = require('child_process');
 
 const PIPE_NAME = 'slobs';
 const PIPE_PATH = '\\\\.\\pipe\\' + PIPE_NAME;
-const PROMISE_TIMEOUT = 50000;
+const PROMISE_TIMEOUT = 10000;
 
 let clientInstance: ApiClient = null;
 
@@ -129,7 +129,7 @@ export class ApiClient {
     const process = spawnSync(
       'node',
       ['./test-dist/test/helpers/cmd-client.js', resourceId, methodName, ...stringifiedArgs],
-      { timeout: 50000 }
+      { timeout: 10000 }
     );
 
     const err = process.stderr.toString();
