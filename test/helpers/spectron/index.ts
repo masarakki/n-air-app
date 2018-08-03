@@ -73,7 +73,7 @@ export function useSpectron(options: ITestRunnerOptions) {
         NODE_ENV: 'test',
         SLOBS_CACHE_DIR: t.context.cacheDir
       },
-      startTimeout: 15000,
+      startTimeout: 50000,
     });
 
     if (options.beforeAppStartCb) await options.beforeAppStartCb(t);
