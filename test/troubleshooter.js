@@ -11,9 +11,9 @@ test('Troubleshooter notifications', async t => {
   const client = await getClient();
   const performanceMonitor = client.getResource('PerformanceMonitorService');
 
-  t.false(await app.client.isExisting('.notification.warning'));
+  t.false(await app.client.waitForExist('.notification.warning', 10 * 10000));
 
   performanceMonitor.pushLaggedFramesNotify(0.5);
 
-  t.true(await app.client.isExisting('.notification.warning'));
+  t.true(await app.client.waitForExist('.notification.warning', 10 * 10000));
 });

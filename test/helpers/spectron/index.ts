@@ -94,12 +94,12 @@ export function useSpectron(options: ITestRunnerOptions) {
       await t.context.app.client.click('a=Setup later');
 
       // This will only show up if OBS is installed
-      if (await t.context.app.client.isExisting('button=Start Fresh')) {
+      if (await t.context.app.client.waitForExist('button=Start Fresh', 10 * 10000)) {
         await t.context.app.client.click('button=Start Fresh');
       }
     } else {
       // Wait for the connect screen before moving on
-      await t.context.app.client.isExisting('button=Twitch');
+      await t.context.app.client.waitForExist('button=Twitch');
     }
 
     // disable the popups that prevents context menu to be shown
