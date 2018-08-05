@@ -10,7 +10,7 @@ install:
   - yarn compile:ci
 
 test_script:
-  - yarn test
+  - yarn test test-dist/test/onboarding.js
   # - yarn screentest
   # - 7z a screentest.zip test-dist\screentest\*
   # - ps: $env:warning_ico = ":warning:"
