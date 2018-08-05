@@ -42,7 +42,7 @@ export async function addSource(t, type, name, closeProps = true) {
   await app.client.click('button=Add Source');
   await app.client.setValue('input', name);
 
-  if (await app.client.waitForExist('button=Done', 10 * 10000)) {
+  if (await app.client.isExisting('button=Done')) {
     await app.client.click('button=Done');
   } else {
     await app.client.click('button=Add New Source');
@@ -77,5 +77,5 @@ export async function openRenameWindow(t, sourceName) {
 
 export async function sourceIsExisting(t, sourceName) {
   const app = t.context.app;
-  return app.client.waitForExist(`.item-title=${sourceName}`, 10 * 10000);
+  return app.client.isExisting(`.item-title=${sourceName}`);
 }

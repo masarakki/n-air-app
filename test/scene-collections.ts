@@ -44,9 +44,9 @@ useSpectron({
  */
 test('Loading an old scene collection', async t => {
   // Make sure we loaded the scenes
-  t.true(await t.context.app.client.waitForExist('li=Stream Starting Soon', 10 * 10000));
-  t.true(await t.context.app.client.waitForExist('li=Live Screen', 10 * 10000));
-  t.true(await t.context.app.client.waitForExist('li=Intermission', 10 * 10000));
-  t.true(await t.context.app.client.waitForExist('li=Be Right Back', 10 * 10000));
-  t.true(await t.context.app.client.waitForExist('li=Stream Ending Soon', 10 * 10000));
+  t.true(await t.context.app.client.isExisting('li=Stream Starting Soon'));
+  t.true(await t.context.app.client.isExisting('li=Live Screen'));
+  t.true(await t.context.app.client.isExisting('li=Intermission'));
+  t.true(await t.context.app.client.isExisting('li=Be Right Back'));
+  t.true(await t.context.app.client.isExisting('li=Stream Ending Soon'));
 });

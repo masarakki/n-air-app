@@ -56,7 +56,7 @@ test('Viewing source properties', async t => {
   await clickSourceProperties(t);
 
   await focusChild(t);
-  t.true(await app.client.waitForExist('label=Color', 10 * 10000));
+  t.true(await app.client.isExisting('label=Color'));
 });
 
 

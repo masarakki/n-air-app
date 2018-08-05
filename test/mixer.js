@@ -14,14 +14,14 @@ test('Adding and removing a AudioSource', async t => {
   await focusMain(t);
 
 
-  t.true(await app.client.$('.mixer-panel').waitForExist('div=Source With Audio', 10 * 10000));
-  t.false(await app.client.$('.mixer-panel').waitForExist('div=Source Without Audio', 10 * 10000));
+  t.true(await app.client.$('.mixer-panel').isExisting('div=Source With Audio'));
+  t.false(await app.client.$('.mixer-panel').isExisting('div=Source Without Audio'));
 
 
   await selectSource(t, 'Source With Audio');
   await clickRemoveSource(t);
 
-  t.false(await app.client.$('.mixer-panel').waitForExist('div=Source With Audio', 10 * 10000));
+  t.false(await app.client.$('.mixer-panel').isExisting('div=Source With Audio'));
 });
 
 
@@ -36,7 +36,7 @@ test('Nested scenes should provide audio sources to mixer', async t => {
   await addExistingSource(t, 'Scene', 'Scene');
 
   await focusMain(t);
-  t.true(await app.client.$('.mixer-panel').waitForExist('div=Simple Media Source', 10 * 10000));
-  t.true(await app.client.$('.mixer-panel').waitForExist('div=Nested Media Source', 10 * 10000));
+  t.true(await app.client.$('.mixer-panel').isExisting('div=Simple Media Source'));
+  t.true(await app.client.$('.mixer-panel').isExisting('div=Nested Media Source'));
 
 });
